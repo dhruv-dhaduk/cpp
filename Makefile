@@ -21,6 +21,9 @@ TARGET = $(BUILD_DIR)/app
 # Default target: build all
 all: $(TARGET)
 
+run: $(TARGET)
+	@./build/app
+
 # Build the executable by linking all object files
 $(TARGET): $(OBJS)
 	@mkdir -p $(BUILD_DIR)
@@ -36,4 +39,4 @@ clean:
 	rm -rf $(BUILD_DIR)
 
 # Phony targets
-.PHONY: all clean
+.PHONY: all clean run
