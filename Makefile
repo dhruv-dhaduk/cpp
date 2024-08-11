@@ -6,11 +6,15 @@ CXXFLAGS = -Wall -Wextra -std=c++17 -Iinclude
 
 # Source and build directories
 SRC_DIR = src
+INCLUDE_DIR = include
 BUILD_DIR = build
 OBJECTS_DIR = objects
 
 # Find all source files in the src directory and its subdirectories
 SRCS = $(shell find $(SRC_DIR) -name '*.cpp')
+
+# Find all include files in the include directory and its subdirectories
+INCLUDES = $(shell find $(INCLUDE_DIR) -name '*.h')
 
 # Generate corresponding object files in the build directory, preserving directory structure
 OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/$(OBJECTS_DIR)/%.o, $(SRCS))
@@ -30,7 +34,7 @@ $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
 
 # Compile source files to object files, preserving directory structure
-$(BUILD_DIR)/$(OBJECTS_DIR)/%.o: $(SRC_DIR)/%.cpp
+$(BUILD_DIR)/$(OBJECTS_DIR)/%.o: $(SRC_DIR)/%.cpp $(INCLUDES)
 	@mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
