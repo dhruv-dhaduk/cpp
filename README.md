@@ -1,7 +1,7 @@
-# C++ Project setup
+# C++ Project template
 
 > [!WARNING]
-> This setup only works for UNIX like systems. If you are using Windows, you can use [WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
+> This template only works for UNIX like systems. If you are using Windows, you can use [WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
 
 ### Structure of the project
 - `src/` folder contains all `.cpp` source files.
