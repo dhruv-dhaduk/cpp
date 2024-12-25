@@ -16,7 +16,7 @@ DEBUG_BUILD_DIR = build/debug
 # Find all source files in the src directory and its subdirectories
 SRCS = $(shell find $(SRC_DIR) -name '*.cpp')
 
-INCLUDES = $(shell find $(INCLUDE_DIR) -name '*.h')
+INCLUDES = $(shell find $(INCLUDE_DIR) -name '*.hpp')
 
 # Generate corresponding object files in the build directory, preserving directory structure
 OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/$(OBJECTS_DIR)/%.o, $(SRCS))
